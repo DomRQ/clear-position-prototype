@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clear Position — Interactive Demonstrator v1</title>
+  <meta name="description" content="High-fidelity clickable demonstrator for the approved Clear Position design system.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" aria-label="Clear Position">
+      <div class="brand-mark">✦</div>
+      <div class="brand-copy">
+        <strong>CLEAR POSITION</strong>
+        <small>Interactive Demonstrator v1</small>
+      </div>
+    </div>
+
+    <div class="screen-meta">
+      <div>
+        <h1 id="screenTitle">Loading…</h1>
+      </div>
+      <span class="badge" id="screenCpux"></span>
+      <span class="badge" id="screenStage"></span>
+    </div>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="menuBtn" aria-label="Open screen map">☰ <span class="hide-small">Screen map</span></button>
+      <button class="action-btn hide-small" id="mobileBtn">Mobile</button>
+      <button class="action-btn hide-small" id="statesBtn">States</button>
+    </div>
+  </header>
+
+  <section class="contextbar" aria-label="Prototype controls">
+    <div class="context-copy">
+      <strong>Guided aesthetic prototype</strong>
+      <p id="screenDescription"></p>
+    </div>
+    <span class="journey-counter" id="journeyCounter">1 / 18</span>
+    <div class="prototype-controls">
+      <label class="switch">
+        <input type="checkbox" id="hotspotToggle" checked>
+        Show clickable areas
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="fitToggle" checked>
+        Fit to window
+      </label>
+    </div>
+  </section>
+
+  <main class="viewport">
+    <div class="prototype-frame">
+      <div class="screen-surface" id="screenSurface">
+        <img class="screen-image fit-width" id="screenImage" alt="">
+        <div class="hotspot-layer" id="hotspotLayer"></div>
+      </div>
+    </div>
+    <p class="prototype-note">
+      Demonstration only: navigation and selected states are simulated. No account, payment, document or personal data is being processed.
+      Use the numbered gold areas, the screen map or the arrow keys.
+    </p>
+  </main>
+
+  <nav class="bottom-dock" aria-label="Prototype navigation">
+    <button id="homeBtn">⌂ Start</button>
+    <button id="backBtn">↶ Back</button>
+    <button id="prevBtn">← Previous screen</button>
+    <button id="nextBtn">Next screen →</button>
+  </nav>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Prototype screen map">
+    <div class="drawer-header">
+      <h2>Clear Position journey</h2>
+      <button class="icon-btn" id="closeDrawerBtn" aria-label="Close screen map">✕</button>
+    </div>
+    <div class="screen-list" id="screenList"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="modal">
+    <div class="modal-card">
+      <header><h2 id="modalTitle">Demonstration action</h2></header>
+      <div class="body" id="modalBody"></div>
+      <footer>
+        <button id="closeModalBtn">Close</button>
+        <button class="primary" id="modalOkayBtn">Understood</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
